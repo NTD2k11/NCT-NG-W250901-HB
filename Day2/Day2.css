@@ -1,0 +1,23 @@
+.box{
+    width: 200px;
+    padding: 30px;
+    border: 2px solid black;
+}
+@media screen and (max-width: 600px){
+    .box{
+        border-color: red;
+    }
+    
+}
+
+    .circle {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        text-align: center;
+    }
+    @media screen and (max-width: 800px){
+        .circle{
+            border-radius: 50%;
+        }
+    }
