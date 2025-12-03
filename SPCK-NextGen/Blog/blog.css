@@ -1,0 +1,210 @@
+/* ===========================
+   TONE MÀU PASTEL TÍM – XANH
+=========================== */
+:root {
+    --primary: #7b8cff;
+    --primary-dark: #6573e6;
+    --bg: #f3f4ff;
+    --card: #ffffff;
+    --text: #333;
+    --subtext: #555;
+    --sidebar-bg: #e8eaff;
+}
+
+/* ===========================
+   CƠ BẢN
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: var(--bg);
+    display: flex;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: var(--sidebar-bg);
+    padding: 25px 20px;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.05);
+    position: fixed;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 8px;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: var(--primary-dark);
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.15s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+/* ===========================
+   MAIN
+=========================== */
+.main {
+    margin-left: 270px;
+    padding: 30px;
+    width: calc(100% - 270px);
+}
+
+.settings-header {
+    margin-bottom: 30px;
+}
+
+.settings-header h1 {
+    color: var(--primary-dark);
+    margin: 0 0 8px 0;
+    font-size: 32px;
+}
+
+.settings-header p {
+    color: var(--subtext);
+    margin: 0;
+    font-size: 14px;
+}
+
+/* ===========================
+   BLOG LIST
+=========================== */
+.blog-list {
+    margin-top: 30px;
+}
+
+.blog-card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border-left: 5px solid var(--primary);
+    transition: 0.15s;
+}
+
+.blog-card:hover {
+    transform: translateX(4px);
+}
+
+.blog-card h3 {
+    margin: 0;
+    color: var(--text);
+}
+
+.blog-card p {
+    margin: 6px 0 0;
+    color: var(--subtext);
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.actions .edit {
+    background: var(--primary);
+    color: white;
+}
+
+.actions .edit:hover {
+    background: var(--primary-dark);
+}
+
+.actions .delete {
+    background: #ffcccb;
+    color: #d32f2f;
+}
+
+.actions .delete:hover {
+    background: #ff9999;
+    color: #b71c1c;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        position: fixed;
+        left: -250px;
+        height: 100vh;
+        z-index: 100;
+        transition: 0.3s;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .settings-header h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 16px;
+    }
+
+    .blog-card {
+        padding: 16px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+}

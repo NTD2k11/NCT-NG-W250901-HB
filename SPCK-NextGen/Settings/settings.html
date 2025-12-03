@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cài đặt</title>
+    <link rel="stylesheet" href="settings.css" />
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2 class="logo">MyBlog</h2>
+        <ul>
+            <li><a href="../Home/home.html">📝 Trang chủ</a></li>
+            <li><a href="#">✏️ Tạo bài viết</a></li>
+            <li><a href="../Blog/blog.html">📚 Bài viết của tôi</a></li>
+            <li><a href="#" class="active">⚙️ Cài đặt</a></li>
+            <li><a href="../About/about.html">ℹ️ Về chúng tôi</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div class="settings-header">
+            <h1>⚙️ Cài đặt</h1>
+            <p>Quản lý các tùy chọn và cấu hình của bạn</p>
+        </div>
+
+        <div class="settings-container">
+            <!-- ACCOUNT SETTINGS -->
+            <section class="settings-section">
+                <h3 class="section-title">👤 Tài khoản</h3>
+                <div class="settings-group">
+                    <div class="setting-item">
+                        <label>Tên đăng nhập</label>
+                        <input type="text" placeholder="Nhập tên đăng nhập" value="nguyendanhphuong" />
+                    </div>
+                    <div class="setting-item">
+                        <label>Email</label>
+                        <input type="email" placeholder="Nhập email" value="user@example.com" />
+                    </div>
+                    <div class="setting-item">
+                        <label>Mật khẩu</label>
+                        <input type="password" placeholder="Nhập mật khẩu mới" />
+                        <small>Để trống nếu không muốn thay đổi</small>
+                    </div>
+                    <button class="btn btn-primary">Lưu thay đổi</button>
+                </div>
+            </section>
+
+            <!-- DISPLAY SETTINGS -->
+            <section class="settings-section">
+                <h3 class="section-title">🎨 Giao diện</h3>
+                <div class="settings-group">
+                    <div class="setting-item toggle-item">
+                        <div>
+                            <label>Chế độ tối</label>
+                            <p class="description">Bật chế độ tối để bảo vệ mắt</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item toggle-item">
+                        <div>
+                            <label>Thông báo âm</label>
+                            <p class="description">Phát âm thanh khi có thông báo</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NOTIFICATION SETTINGS -->
+            <section class="settings-section">
+                <h3 class="section-title">🔔 Thông báo</h3>
+                <div class="settings-group">
+                    <div class="setting-item toggle-item">
+                        <div>
+                            <label>Email thông báo</label>
+                            <p class="description">Nhận thông báo qua email</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item toggle-item">
+                        <div>
+                            <label>Thông báo bình luận mới</label>
+                            <p class="description">Nhận thông báo khi có bình luận</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

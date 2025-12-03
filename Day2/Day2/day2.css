@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.navbar {
+  background: #ffffff;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 20;
+}
+
+.logo img {
+  width: 55px;
+}
+
+/* ❗ MENU desktop */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* HAMBURGER VISIBLE ONLY ON MOBILE */
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+/* 📱 MOBILE STYLE */
+@media (max-width: 768px) {
+  /* Hide menu on mobile (becomes sidebar) */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -260px; /* hidden */
+    flex-direction: column;
+    padding-top: 80px;
+    width: 260px;
+    height: 100%;
+    gap: 25px;
+    background: #fff;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+  }
+
+  .menu.show {
+    left: 0; /* slide in */
+  }
+
+  .menu li a {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Overlay (background mờ) */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 10;
+}
+
+.overlay.show {
+  display: block;
+}
+
+
+
+/* Css circle truoc */
+
+@media screen and (min-width: 600px) {
+  .box {
+    background-color: blue;
+  }
+}
+
+/* Media breakpoint 800 */
+.circle {
+  width: 300px;
+  height: 300px;
+  background-color: antiquewhite;
+}
+
+/* Nếu < 800px thì sẽ ăn theo giao diện bên dưới */
+@media screen and (max-width: 800px) {
+  .circle {
+    border-radius: 50%;
+  }
+}
+
+/* Nếu > 800px thì sẽ ăn theo giao diện bên dưới */
+/* @media screen and (min-width: 800px) {
+    .circle {
+        border-radius: 50%;
+    }
+} */
+
+.card_container {
+    max-width: 900px;
+    padding: 40px;
+    border: 5px dashed black;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 25px;
+}
+
+.card {
+  width: 200px;
+  min-height: 150px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.img_container {
+  width: 50px;
+  height: 50px;
+}
+
+.img_container img {
+  width: 100%;
+  height: 100%;
+}
