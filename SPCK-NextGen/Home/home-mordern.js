@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
-import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
 
 const firebaseConfig = {
@@ -16,156 +16,98 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
 
-function formatDate(value) {
-  if (!value) return "Vừa xong";
-  if (typeof value === "number") {
-    return new Date(value).toLocaleDateString("vi-VN");
-  }
-  if (typeof value === "string") return value;
-  return "Vừa xong";
+let allPosts = []; // lưu toàn bộ bài để search
+
+function formatDate(t) {
+  return t ? new Date(t).toLocaleDateString("vi-VN") : "Vừa xong";
 }
 
-function renderHotPosts(posts) {
-  const container = document.getElementById("hotPosts");
-  if (!container) return;
+function render(id, posts) {
+  const box = document.getElementById(id);
+  if (!box) return;
 
-  if (!posts.length) {
-    container.innerHTML = "<p>Chưa có bài viết nào.</p>";
+  box.innerHTML = posts.map(p => `
+    <article class="blog-card" data-id="${p.id}">
+      <div class="card-content">
+        <span class="category">${p.category || "Khác"}</span>
+        <h4>${p.title}</h4>
+        <p>${(p.content || "").slice(0, 100)}...</p>
+        <div class="stats">
+          <span>👁️ ${p.views || 0}</span>
+          <span>❤️ ${p.likes || 0}</span>
+          <span>${formatDate(p.createdAt)}</span>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+async function loadPosts() {
+  const snap = await get(ref(db, "posts"));
+  const data = snap.val();
+  if (!data) return;
+
+  const posts = Object.entries(data).map(([id, p]) => ({ ...p, id }));
+  allPosts = posts;
+
+  const latest = [...posts]
+    .sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0))
+    .slice(0, 6);
+
+  const popular = [...posts]
+    .sort((a, b) => (b.views || 0) - (a.views || 0))
+    .slice(0, 6);
+
+  const trending = [...posts]
+    .sort((a, b) => ((b.likes || 0) * 2 + (b.views || 0)) -
+                    ((a.likes || 0) * 2 + (a.views || 0)))
+    .slice(0, 3);
+
+  render("hotPosts", trending);
+  render("popularPosts", popular);
+  render("latestPosts", latest);
+}
+
+// SEARCH
+function searchPosts(keyword) {
+  keyword = keyword.toLowerCase().trim();
+
+  if (!keyword) {
+    loadPosts();
     return;
   }
 
-  container.innerHTML = posts
-    .map((post) => {
-      const title = post.title || "Bài viết chưa có tiêu đề";
-      const excerpt = post.content
-        ? post.content.slice(0, 120) + (post.content.length > 120 ? "..." : "")
-        : "Chưa có mô tả.";
-      const image =
-        post.imageUrl ||
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop";
-      const category = post.category || "Khác";
-      const author = post.authorName || "Ẩn danh";
-      const date = formatDate(post.createdAt);
-      const views = post.views ?? 0;
-      const likes = post.likes ?? 0;
-      const postId = post.id || "";
+  const result = allPosts.filter(p =>
+    (p.title || "").toLowerCase().includes(keyword) ||
+    (p.content || "").toLowerCase().includes(keyword)
+  );
 
-      return `
-        <article class="blog-card featured" data-id="${postId}">
-          <div class="card-image">
-            <img src="${image}" alt="">
-            <span class="badge">🔥 HOT</span>
-          </div>
-          <div class="card-content">
-            <span class="category">${category}</span>
-            <h4>${title}</h4>
-            <p>${excerpt}</p>
-            <div class="card-footer">
-              <div class="author-info">
-                <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(
-                  author
-                )}&size=32&background=7b8cff&color=fff" alt="">
-                <div>
-                  <p class="author">${author}</p>
-                  <p class="date">${date}</p>
-                </div>
-              </div>
-              <div class="stats">
-                <span>👁️ ${views}</span>
-                <span>❤️ ${likes}</span>
-              </div>
-            </div>
-          </div>
-        </article>
-      `;
-    })
-    .join("");
+  render("latestPosts", result);
+  document.getElementById("hotPosts").innerHTML = "";
+  document.getElementById("popularPosts").innerHTML = "";
 }
 
-async function loadHotPosts() {
-  try {
-    const snap = await get(ref(db, "posts"));
-    const data = snap.val();
-    if (!data) {
-      renderHotPosts([]);
-      return;
-    }
+document.getElementById("searchInput")?.addEventListener("input", e => {
+  searchPosts(e.target.value);
+});
 
-    const posts = Object.entries(data)
-      .map(([id, post]) => ({
-        ...post,
-        id
-      }))
-      .filter((p) => p && (p.isHot === true || p.featured === true || p.hot === true))
-      .sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0))
-      .slice(0, 3);
-
-    renderHotPosts(posts);
-  } catch (err) {
-    console.error("Load hot posts failed:", err);
-    renderHotPosts([]);
-  }
-}
-
-function extractCardData(card) {
-  const title = card.querySelector("h4")?.textContent?.trim() || "";
-  const excerpt = card.querySelector(".card-content p")?.textContent?.trim() || "";
-  const category = card.querySelector(".category")?.textContent?.trim() || "";
-  const image = card.querySelector(".card-image img")?.getAttribute("src") || "";
-  const author =
-    card.querySelector(".author")?.textContent?.trim() ||
-    card.querySelector(".author-info-small span")?.textContent?.trim() ||
-    "";
-  const date =
-    card.querySelector(".date")?.textContent?.trim() ||
-    card.querySelector(".date-small")?.textContent?.trim() ||
-    "";
-
-  return {
-    title,
-    content: excerpt,
-    imageUrl: image,
-    category,
-    authorName: author,
-    createdAt: date
-  };
-}
-
-function handleCardClick(event) {
-  const card = event.target.closest(".blog-card");
-  if (!card) return;
-
-  const payload = extractCardData(card);
-  if (payload.title || payload.content) {
-    sessionStorage.setItem("postDetailData", JSON.stringify(payload));
-  }
-
-  const postId = card.getAttribute("data-id");
-  let url = "../Blog/post-detail.html";
-  if (postId) {
-    url += `?id=${encodeURIComponent(postId)}`;
-  }
-
-  window.location.href = url;
-}
-
-onAuthStateChanged(auth, (user) => {
-  if (!user) {
-    window.location.href = "../login.html";
+// MỞ BÀI
+document.addEventListener("click", e => {
+  const card = e.target.closest(".blog-card");
+  if (card?.dataset.id) {
+    window.location.href = `../Blog/post-detail.html?id=${card.dataset.id}`;
   }
 });
 
-loadHotPosts();
-
-const logoutBtn = document.querySelector(".btn-logout");
-logoutBtn?.addEventListener("click", async () => {
-  try {
-    await signOut(auth);
-    window.location.href = "../login.html";
-  } catch (err) {
-    console.error("Logout failed:", err);
-    alert("Đăng xuất thất bại. Vui lòng thử lại.");
-  }
+// AUTH CHECK
+onAuthStateChanged(auth, user => {
+  if (!user) window.location.href = "../login.html";
 });
 
-document.addEventListener("click", handleCardClick);
+// LOGOUT
+document.querySelector(".btn-logout")?.addEventListener("click", async () => {
+  await signOut(auth);
+  window.location.href = "../login.html";
+});
+
+loadPosts();
