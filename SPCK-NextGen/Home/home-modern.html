@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang ch? - BlogHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./home-modern.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">?? BlogHub</div>
+            <nav class="nav">
+                <a href="../dashboard.html" class="nav-item">?? Dashboard</a>
+                <a href="#" class="nav-item active">?? Trang ch?</a>
+                <a href="../Blog/blog.html" class="nav-item">?? B?i vi?t</a>
+                <a href="../notifications.html" class="nav-item">?? Th?ng b?o</a>
+                <a href="../account.html" class="nav-item">?? T?i kho?n</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-icon"><i class="fas fa-search"></i></button>
+                <button class="btn-icon"><i class="fas fa-moon"></i></button>
+                <button class="btn-logout">?? ??ng xu?t</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h3>?? Kh?m ph?</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="menu-item active">?? Xu h??ng</a></li>
+                    <li><a href="#" class="menu-item">? Ph? bi?n</a></li>
+                    <li><a href="#" class="menu-item">?? M?i nh?t</a></li>
+                    <li><a href="#" class="menu-item">?? Theo d?i</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>?? Danh m?c</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="menu-item">?? C?ng ngh?</a></li>
+                    <li><a href="#" class="menu-item">?? Du l?ch</a></li>
+                    <li><a href="#" class="menu-item">??? ?m th?c</a></li>
+                    <li><a href="#" class="menu-item">?? L?i s?ng</a></li>
+                    <li><a href="#" class="menu-item">?? Gi?o d?c</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>?? Theo d?i</h3>
+                <div class="follow-list">
+                    <div class="follow-item">
+                        <img src="https://ui-avatars.com/api/?name=Tran+Minh&size=36&background=7b8cff&color=fff" alt="">
+                        <div>
+                            <p class="follow-name">Tr?n Minh</p>
+                            <p class="follow-role">Tech Blogger</p>
+                        </div>
+                    </div>
+                    <div class="follow-item">
+                        <img src="https://ui-avatars.com/api/?name=Vu+Linh&size=36&background=4caf50&color=fff" alt="">
+                        <div>
+                            <p class="follow-name">V? Linh</p>
+                            <p class="follow-role">Travel Writer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <!-- SEARCH & FILTER -->
+            <div class="content-header">
+                <h2>?? B?i vi?t h?m nay</h2>
+                <div class="search-box">
+                    <input type="text" placeholder="T?m ki?m b?i vi?t...">
+                    <button class="btn btn-small btn-primary">??</button>
+                </div>
+            </div>
+
+            <!-- HOT SECTION -->
+            <section class="content-section">
+                <h3 class="section-title">?? Xu h??ng h?m nay</h3>
+                <div class="cards-grid" id="hotPosts">
+                    <article class="blog-card featured">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop" alt="">
+                            <span class="badge">?? HOT</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="category">?? C?ng ngh?</span>
+                            <h4>AI & Machine Learning - T??ng lai c?ng ngh?</h4>
+                            <p>Kh?m ph? nh?ng ?ng d?ng tuy?t v?i c?a AI trong ??i s?ng h?ng ng?y...</p>
+                            <div class="card-footer">
+                                <div class="author-info">
+                                    <img src="https://ui-avatars.com/api/?name=Tran+Minh&size=32&background=7b8cff&color=fff" alt="">
+                                    <div>
+                                        <p class="author">Tr?n Minh</p>
+                                        <p class="date">2 ng?y tr??c</p>
+                                    </div>
+                                </div>
+                                <div class="stats">
+                                    <span>??? 2.3K</span>
+                                    <span>?? 345</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card featured">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=300&fit=crop" alt="">
+                            <span class="badge">?? HOT</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="category">?? Du l?ch</span>
+                            <h4>10 ?i?m ??n tuy?t v?i ? ??ng Nam ?</h4>
+                            <p>C? h?i kh?ng th? b? qua ?? kh?m ph? nh?ng danh th?ng h?p d?n...</p>
+                            <div class="card-footer">
+                                <div class="author-info">
+                                    <img src="https://ui-avatars.com/api/?name=Linh+Vu&size=32&background=4caf50&color=fff" alt="">
+                                    <div>
+                                        <p class="author">V? Linh</p>
+                                        <p class="date">3 ng?y tr??c</p>
+                                    </div>
+                                </div>
+                                <div class="stats">
+                                    <span>??? 1.8K</span>
+                                    <span>?? 267</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card featured">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=500&h=300&fit=crop" alt="">
+                            <span class="badge">?? HOT</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="category">??? ?m th?c</span>
+                            <h4>C?ng th?c n?u ?n d? nh?t cho ng??i m?i</h4>
+                            <p>B?n s? t?o ra nh?ng m?n ?n ngon mi?ng ch? trong 30 ph?t...</p>
+                            <div class="card-footer">
+                                <div class="author-info">
+                                    <img src="https://ui-avatars.com/api/?name=Tuan+Chef&size=32&background=ff9800&color=fff" alt="">
+                                    <div>
+                                        <p class="author">Tu?n Chef</p>
+                                        <p class="date">1 ng?y tr??c</p>
+                                    </div>
+                                </div>
+                                <div class="stats">
+                                    <span>??? 3.1K</span>
+                                    <span>?? 512</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- LATEST SECTION -->
+            <section class="content-section">
+                <h3 class="section-title">? Ph? bi?n</h3>
+                <div class="cards-grid">
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=250&fit=crop" alt="">
+                        </div>
+                        <div class="card-content">
+                            <span class="category">?? L?i s?ng</span>
+                            <h4>C?ch b?t ??u m?t ng?y hi?u qu?</h4>
+                            <p>M?o nh? gi?p b?n b?t ??u ng?y m?i v?i n?ng l??ng t?i ?a...</p>
+                            <div class="card-footer">
+                                <div class="author-info-small">
+                                    <img src="https://ui-avatars.com/api/?name=Huong&size=28&background=e91e63&color=fff" alt="">
+                                    <span>H??ng Nguy?n</span>
+                                </div>
+                                <span class="date-small">1 tu?n tr??c</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=400&h=250&fit=crop" alt="">
+                        </div>
+                        <div class="card-content">
+                            <span class="category">?? C?ng ngh?</span>
+                            <h4>Web Development Trends 2024</h4>
+                            <p>Nh?ng c?ng ngh? m?i s? ??nh h?nh ng?nh ph?t tri?n web...</p>
+                            <div class="card-footer">
+                                <div class="author-info-small">
+                                    <img src="https://ui-avatars.com/api/?name=Dev+Tuan&size=28&background=2196f3&color=fff" alt="">
+                                    <span>Dev Tu?n</span>
+                                </div>
+                                <span class="date-small">5 ng?y tr??c</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f70504466?w=400&h=250&fit=crop" alt="">
+                        </div>
+                        <div class="card-content">
+                            <span class="category">?? Du l?ch</span>
+                            <h4>Bali - Thi?n ???ng du l?ch</h4>
+                            <p>Chu?n b? cho chuy?n du l?ch ??n Bali m?t c?ch ho?n h?o...</p>
+                            <div class="card-footer">
+                                <div class="author-info-small">
+                                    <img src="https://ui-avatars.com/api/?name=Travel&size=28&background=4caf50&color=fff" alt="">
+                                    <span>Travel Blogger</span>
+                                </div>
+                                <span class="date-small">2 tu?n tr??c</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1490694612174-81c6da6d3cad?w=400&h=250&fit=crop" alt="">
+                        </div>
+                        <div class="card-content">
+                            <span class="category">??? ?m th?c</span>
+                            <h4>C? ph? - Ngh? thu?t v? khoa h?c</h4>
+                            <p>Hi?u r? h?n v? h??ng v? v? c?ch pha ch? c? ph? ho?n h?o...</p>
+                            <div class="card-footer">
+                                <div class="author-info-small">
+                                    <img src="https://ui-avatars.com/api/?name=Coffee&size=28&background=8d6e63&color=fff" alt="">
+                                    <span>Coffee Lover</span>
+                                </div>
+                                <span class="date-small">3 ng?y tr??c</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1512941691920-25bda36fda14?w=400&h=250&fit=crop" alt="">
+                        </div>
+                        <div class="card-content">
+                            <span class="category">?? L?i s?ng</span>
+                            <h4>Yoga cho ng??i b?n r?n</h4>
+                            <p>Nh?ng b?i t?p yoga ??n gi?n gi?p th? gi?n trong 10 ph?t...</p>
+                            <div class="card-footer">
+                                <div class="author-info-small">
+                                    <img src="https://ui-avatars.com/api/?name=Wellness&size=28&background=9c27b0&color=fff" alt="">
+                                    <span>Wellness Coach</span>
+                                </div>
+                                <span class="date-small">1 tu?n tr??c</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1633174524827-fe97c86b04d5?w=400&h=250&fit=crop" alt="">
+                        </div>
+                        <div class="card-content">
+                            <span class="category">?? C?ng ngh?</span>
+                            <h4>B?o m?t d? li?u c? nh?n</h4>
+                            <p>C?ch b?o v? th?ng tin c? nh?n c?a b?n tr?n internet...</p>
+                            <div class="card-footer">
+                                <div class="author-info-small">
+                                    <img src="https://ui-avatars.com/api/?name=Security&size=28&background=f44336&color=fff" alt="">
+                                    <span>Security Expert</span>
+                                </div>
+                                <span class="date-small">4 ng?y tr??c</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- LOAD MORE -->
+            <div class="load-more">
+                <button class="btn btn-primary">Xem th?m b?i vi?t</button>
+            </div>
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="sidebar-right">
+            <div class="sidebar-card sticky">
+                <h3>? Blogger n?i b?t</h3>
+                <div class="trending-list">
+                    <div class="trending-item">
+                        <div class="rank">1</div>
+                        <div class="content">
+                            <p class="title">Tr?n Minh</p>
+                            <p class="desc">245 b?i vi?t ? 5.2K followers</p>
+                        </div>
+                        <button class="btn btn-small btn-primary">Follow</button>
+                    </div>
+                    <div class="trending-item">
+                        <div class="rank">2</div>
+                        <div class="content">
+                            <p class="title">V? Linh</p>
+                            <p class="desc">189 b?i vi?t ? 4.8K followers</p>
+                        </div>
+                        <button class="btn btn-small btn-primary">Follow</button>
+                    </div>
+                    <div class="trending-item">
+                        <div class="rank">3</div>
+                        <div class="content">
+                            <p class="title">Tu?n Chef</p>
+                            <p class="desc">156 b?i vi?t ? 3.9K followers</p>
+                        </div>
+                        <button class="btn btn-small btn-secondary">?ang Follow</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-card sticky">
+                <h3>?? Th?ng k?</h3>
+                <div class="stats-simple">
+                    <div class="stat-item">
+                        <span class="stat-value">124K</span>
+                        <span class="stat-label">B?i vi?t</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">52K</span>
+                        <span class="stat-label">Blogger</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">2.3M</span>
+                        <span class="stat-label">L??t xem</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 BlogHub. T?t c? quy?n ???c b?o l?u.</p>
+        <div class="footer-links">
+            <a href="../index.html">Trang ch?</a>
+            <a href="../About/about.html">V? ch?ng t?i</a>
+            <a href="../Contact/contact.html">Li?n h?</a>
+            <a href="#">Ch?nh s?ch ri?ng t?</a>
+        </div>
+    </footer>
+    <script type="module" src="./home-mordern.js"></script>
+    <script src="../theme.js"></script>
+</body>
+</html>

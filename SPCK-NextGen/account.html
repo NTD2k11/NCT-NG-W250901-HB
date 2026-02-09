@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản của tôi - BlogHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="account.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">📝 BlogHub</div>
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-item">📊 Dashboard</a>
+                <a href="Home/home-modern.html" class="nav-item">📝 Trang chủ</a>
+                <a href="Blog/blog.html" class="nav-item">📚 Bài viết</a>
+                <a href="notifications.html" class="nav-item">🔔 Thông báo</a>
+                <a href="account.html" class="nav-item active">⚙️ Tài khoản</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-icon"><i class="fas fa-bell"></i></button>
+                <button class="btn-icon"><i class="fas fa-moon"></i></button>
+                <button class="btn-logout">🚪 Đăng xuất</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="account-container">
+        <!-- LEFT SIDEBAR - MENU -->
+        <aside class="account-menu">
+            <div class="menu-section">
+                <h3>Quản lý tài khoản</h3>
+                <ul>
+                    <li><a href="#profile" class="menu-item active" data-tab="profile">👤 Hồ sơ</a></li>
+                    <li><a href="#security" class="menu-item" data-tab="security">🔒 Bảo mật</a></li>
+                    <li><a href="#password" class="menu-item" data-tab="password">🔑 Thay đổi mật khẩu</a></li>
+                    <li><a href="#privacy" class="menu-item" data-tab="privacy">👁️ Quyền riêng tư</a></li>
+                    <li><a href="#notifications" class="menu-item" data-tab="notifications">🔔 Thông báo</a></li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h3>Quản lý nội dung</h3>
+                <ul>
+                    <li><a href="#drafts" class="menu-item" data-tab="drafts">📋 Bản nháp</a></li>
+                    <li><a href="#published" class="menu-item" data-tab="published">✅ Đã xuất bản</a></li>
+                    <li><a href="#bookmarks" class="menu-item" data-tab="bookmarks">🔖 Đã lưu</a></li>
+                </ul>
+            </div>
+            <div class="menu-section danger">
+                <h3>Nguy hiểm</h3>
+                <ul>
+                    <li><a href="#delete" class="menu-item" data-tab="delete">🗑️ Xóa tài khoản</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="account-content">
+            <!-- PROFILE TAB -->
+            <section id="profile" class="tab-content active">
+                <div class="section-header">
+                    <h2>👤 Hồ sơ cá nhân</h2>
+                    <p>Quản lý thông tin cá nhân của bạn</p>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="avatar-section">
+                            <div class="avatar-large">
+                                <img src="https://ui-avatars.com/api/?name=Nguyen+Danh+Phuong&size=120&background=7b8cff&color=fff" alt="Avatar">
+                            </div>
+                            <button class="btn btn-secondary">Thay đổi ảnh</button>
+                        </div>
+                        <div class="profile-info">
+                            <h3>Nguyễn Danh Phương</h3>
+                            <p class="username">@nguyendanhphuong</p>
+                            <p class="member-since">Thành viên từ 15/06/2024</p>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Thông tin cơ bản</h3>
+                        <form class="form-grid">
+                            <div class="form-group">
+                                <label>Họ và tên</label>
+                                <input type="text" placeholder="Nhập họ và tên" value="Nguyễn Danh Phương" />
+                            </div>
+                            <div class="form-group">
+                                <label>Tên đăng nhập</label>
+                                <input type="text" placeholder="Tên đăng nhập" value="nguyendanhphuong" />
+                                <small>Không thể thay đổi tên đăng nhập</small>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Email</label>
+                                <input type="email" placeholder="Nhập email" value="user@example.com" />
+                                <small>✅ Email đã xác minh</small>
+                            </div>
+                            <div class="form-group">
+                                <label>Số điện thoại</label>
+                                <input type="tel" placeholder="+84 9xx xxx xxx" value="+84 912 345 678" />
+                            </div>
+                            <div class="form-group">
+                                <label>Ngày sinh</label>
+                                <input type="date" value="1999-05-15" />
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Tiểu sử</label>
+                                <textarea placeholder="Viết gì đó về bạn..." rows="4">Lập trình viên web, yêu thích viết blog về công nghệ và lập trình.</textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Vị trí</label>
+                                <input type="text" placeholder="Thành phố, Quốc gia" value="Hà Nội, Việt Nam" />
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Website cá nhân</label>
+                                <input type="url" placeholder="https://yourwebsite.com" value="https://example.com" />
+                            </div>
+                        </form>
+                        <button class="btn btn-primary">💾 Lưu thay đổi</button>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h3>Thống kê tài khoản</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-icon">📝</div>
+                            <div class="stat-content">
+                                <div class="stat-value">24</div>
+                                <div class="stat-label">Bài viết</div>
+                            </div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-content">
+                                <div class="stat-value">520</div>
+                                <div class="stat-label">Người theo dõi</div>
+                            </div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">❤️</div>
+                            <div class="stat-content">
+                                <div class="stat-value">1.2K</div>
+                                <div class="stat-label">Lượt thích</div>
+                            </div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">💬</div>
+                            <div class="stat-content">
+                                <div class="stat-value">345</div>
+                                <div class="stat-label">Bình luận</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECURITY TAB -->
+            <section id="security" class="tab-content">
+                <div class="section-header">
+                    <h2>🔒 Bảo mật tài khoản</h2>
+                    <p>Quản lý các tùy chọn bảo mật của bạn</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-item">
+                        <div class="security-info">
+                            <h3>Xác thực hai yếu tố (2FA)</h3>
+                            <p>Thêm một lớp bảo vệ bổ sung cho tài khoản của bạn</p>
+                            <span class="status status-inactive">❌ Chưa bật</span>
+                        </div>
+                        <button class="btn btn-primary">Bật 2FA</button>
+                    </div>
+
+                    <div class="security-item">
+                        <div class="security-info">
+                            <h3>Phiên đăng nhập hoạt động</h3>
+                            <p>Quản lý các thiết bị đang sử dụng tài khoản của bạn</p>
+                        </div>
+                        <button class="btn btn-secondary">Xem phiên</button>
+                    </div>
+
+                    <div class="sessions-list">
+                        <h3>🖥️ Thiết bị hoạt động</h3>
+                        <div class="session-item">
+                            <div class="session-info">
+                                <div class="device-icon">💻</div>
+                                <div>
+                                    <p class="device-name">Windows 11 - Chrome</p>
+                                    <p class="device-location">🌍 Hà Nội, Việt Nam</p>
+                                    <p class="device-time">Hoạt động vài giây trước</p>
+                                </div>
+                            </div>
+                            <span class="badge badge-current">Hiện tại</span>
+                        </div>
+                        <div class="session-item">
+                            <div class="session-info">
+                                <div class="device-icon">📱</div>
+                                <div>
+                                    <p class="device-name">iPhone 13 - Safari</p>
+                                    <p class="device-location">🌍 Hà Nội, Việt Nam</p>
+                                    <p class="device-time">Hoạt động 2 giờ trước</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-danger">Đăng xuất</button>
+                        </div>
+                    </div>
+
+                    <div class="security-item">
+                        <div class="security-info">
+                            <h3>Lịch sử đăng nhập</h3>
+                            <p>Xem tất cả các lần đăng nhập gần đây</p>
+                        </div>
+                        <button class="btn btn-secondary">Xem lịch sử</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PASSWORD TAB -->
+            <section id="password" class="tab-content">
+                <div class="section-header">
+                    <h2>🔑 Thay đổi mật khẩu</h2>
+                    <p>Cập nhật mật khẩu của bạn để giữ tài khoản an toàn</p>
+                </div>
+
+                <div class="password-card">
+                    <form class="password-form">
+                        <div class="form-group">
+                            <label>Mật khẩu hiện tại</label>
+                            <input type="password" placeholder="Nhập mật khẩu hiện tại" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mật khẩu mới</label>
+                            <input type="password" placeholder="Nhập mật khẩu mới (tối thiểu 8 ký tự)" required />
+                            <div class="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill" style="width: 0%"></div>
+                                </div>
+                                <p class="strength-text">Độ mạnh: <span id="strengthLabel">Yếu</span></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Xác nhận mật khẩu mới</label>
+                            <input type="password" placeholder="Nhập lại mật khẩu mới" required />
+                        </div>
+
+                        <div class="password-requirements">
+                            <h4>Yêu cầu mật khẩu:</h4>
+                            <ul>
+                                <li><span class="req-icon">✓</span> Ít nhất 8 ký tự</li>
+                                <li><span class="req-icon">✓</span> Chứa chữ hoa (A-Z)</li>
+                                <li><span class="req-icon">✓</span> Chứa chữ thường (a-z)</li>
+                                <li><span class="req-icon">✓</span> Chứa số (0-9)</li>
+                                <li><span class="req-icon">✗</span> Chứa ký tự đặc biệt (!@#$)</li>
+                            </ul>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Cập nhật mật khẩu</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- PRIVACY TAB -->
+            <section id="privacy" class="tab-content">
+                <div class="section-header">
+                    <h2>👁️ Quyền riêng tư</h2>
+                    <p>Kiểm soát ai có thể xem thông tin của bạn</p>
+                </div>
+
+                <div class="privacy-card">
+                    <div class="privacy-item">
+                        <div class="privacy-info">
+                            <h3>Hồ sơ công khai</h3>
+                            <p>Cho phép người khác xem hồ sơ của bạn</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="privacy-item">
+                        <div class="privacy-info">
+                            <h3>Cho phép người khác theo dõi</h3>
+                            <p>Mọi người có thể theo dõi tài khoản của bạn</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="privacy-item">
+                        <div class="privacy-info">
+                            <h3>Bài viết công khai theo mặc định</h3>
+                            <p>Bài viết mới sẽ công khai trừ khi bạn đặt khác</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="privacy-item">
+                        <div class="privacy-info">
+                            <h3>Hiển thị hoạt động</h3>
+                            <p>Hiển thị khi bạn đang trực tuyến</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="privacy-item">
+                        <div class="privacy-info">
+                            <h3>Cho phép nhận tin nhắn từ mọi người</h3>
+                            <p>Mọi người có thể gửi tin nhắn cho bạn</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NOTIFICATIONS TAB -->
+            <section id="notifications" class="tab-content">
+                <div class="section-header">
+                    <h2>🔔 Cấu hình thông báo</h2>
+                    <p>Chọn loại thông báo bạn muốn nhận</p>
+                </div>
+
+                <div class="notifications-card">
+                    <div class="notification-group">
+                        <h3>📧 Thông báo Email</h3>
+                        <div class="notification-item">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                            <div>
+                                <h4>Bình luận mới</h4>
+                                <p>Thông báo khi có người bình luận bài viết của bạn</p>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                            <div>
+                                <h4>Người mới theo dõi</h4>
+                                <p>Thông báo khi ai đó theo dõi bạn</p>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                            <div>
+                                <h4>Lượt thích bài viết</h4>
+                                <p>Thông báo khi ai đó thích bài viết của bạn</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="notification-group">
+                        <h3>🔔 Thông báo ứng dụng</h3>
+                        <div class="notification-item">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                            <div>
+                                <h4>Thông báo đẩy (Push)</h4>
+                                <p>Nhận thông báo trên trình duyệt</p>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                            <div>
+                                <h4>Âm thanh thông báo</h4>
+                                <p>Phát âm thanh khi có thông báo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DRAFTS TAB -->
+            <section id="drafts" class="tab-content">
+                <div class="section-header">
+                    <h2>📋 Bản nháp</h2>
+                    <p>Các bài viết chưa xuất bản</p>
+                </div>
+
+                <div class="content-list">
+                    <div class="content-item">
+                        <div class="content-info">
+                            <h3>Hướng dẫn JavaScript nâng cao</h3>
+                            <p class="content-date">Lưu lần cuối: 5 giờ trước</p>
+                        </div>
+                        <div class="content-actions">
+                            <button class="btn btn-small">✏️ Chỉnh sửa</button>
+                            <button class="btn btn-small btn-danger">🗑️ Xóa</button>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-info">
+                            <h3>So sánh React vs Vue</h3>
+                            <p class="content-date">Lưu lần cuối: 1 ngày trước</p>
+                        </div>
+                        <div class="content-actions">
+                            <button class="btn btn-small">✏️ Chỉnh sửa</button>
+                            <button class="btn btn-small btn-danger">🗑️ Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PUBLISHED TAB -->
+            <section id="published" class="tab-content">
+                <div class="section-header">
+                    <h2>✅ Đã xuất bản</h2>
+                    <p>Các bài viết công khai của bạn</p>
+                </div>
+
+                <div class="content-list">
+                    <div class="content-item published">
+                        <div class="content-info">
+                            <h3>Bắt đầu với Node.js</h3>
+                            <p class="content-date">Xuất bản: 15/11/2024 | 👁️ 1.2K lượt xem | ❤️ 245 thích</p>
+                        </div>
+                        <div class="content-actions">
+                            <button class="btn btn-small">👁️ Xem</button>
+                            <button class="btn btn-small">✏️ Chỉnh sửa</button>
+                            <button class="btn btn-small btn-danger">🗑️ Xóa</button>
+                        </div>
+                    </div>
+                    <div class="content-item published">
+                        <div class="content-info">
+                            <h3>CSS Grid - Hướng dẫn đầy đủ</h3>
+                            <p class="content-date">Xuất bản: 08/10/2024 | 👁️ 2.5K lượt xem | ❤️ 532 thích</p>
+                        </div>
+                        <div class="content-actions">
+                            <button class="btn btn-small">👁️ Xem</button>
+                            <button class="btn btn-small">✏️ Chỉnh sửa</button>
+                            <button class="btn btn-small btn-danger">🗑️ Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DELETE ACCOUNT TAB -->
+            <section id="delete" class="tab-content">
+                <div class="section-header">
+                    <h2>🗑️ Xóa tài khoản</h2>
+                    <p>Thao tác này không thể hoàn tác</p>
+                </div>
+
+                <div class="delete-card warning">
+                    <div class="warning-icon">⚠️</div>
+                    <div class="warning-content">
+                        <h3>Điều này sẽ:</h3>
+                        <ul>
+                            <li>Xóa tất cả thông tin cá nhân của bạn</li>
+                            <li>Xóa tất cả bài viết của bạn</li>
+                            <li>Xóa tất cả bình luận và tương tác</li>
+                            <li>Không thể khôi phục dữ liệu</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <form class="delete-form">
+                    <div class="form-group">
+                        <label>Xác nhận bằng cách nhập email của bạn:</label>
+                        <input type="email" placeholder="user@example.com" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required />
+                            Tôi hiểu rằng hành động này không thể hoàn tác và tôi chịu trách nhiệm cho tất cả hậu quả
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger">Xóa tài khoản của tôi</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 BlogHub. Tất cả quyền được bảo lưu.</p>
+        <div class="footer-links">
+            <a href="index.html">Trang chủ</a>
+            <a href="About/about.html">Về chúng tôi</a>
+            <a href="Contact/contact.html">Liên hệ</a>
+            <a href="#">Chính sách riêng tư</a>
+        </div>
+    </footer>
+        // Tab switching functionality
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const tabName = this.getAttribute('data-tab');
+                
+                // Hide all tabs
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Remove active from all menu items
+                document.querySelectorAll('.menu-item').forEach(menu => {
+                    menu.classList.remove('active');
+                });
+                
+                // Show selected tab and mark menu item as active
+                document.getElementById(tabName).classList.add('active');
+                this.classList.add('active');
+            });
+        });
+
+        // Password strength checker
+        const passwordInput = document.querySelector('input[type="password"]');
+        if (passwordInput) {
+            passwordInput.addEventListener('input', function() {
+                const strength = calculatePasswordStrength(this.value);
+                const strengthFill = document.querySelector('.strength-fill');
+                const strengthLabel = document.getElementById('strengthLabel');
+                
+                if (strengthFill && strengthLabel) {
+                    strengthFill.style.width = strength + '%';
+                    strengthLabel.textContent = getStrengthText(strength);
+                }
+            });
+        }
+
+        function calculatePasswordStrength(password) {
+            let strength = 0;
+            if (password.length >= 8) strength += 25;
+            if (/[a-z]/.test(password)) strength += 25;
+            if (/[A-Z]/.test(password)) strength += 25;
+            if (/[0-9]/.test(password)) strength += 25;
+            return strength;
+        }
+
+        function getStrengthText(strength) {
+            if (strength < 25) return 'Yếu';
+            if (strength < 50) return 'Trung bình';
+            if (strength < 75) return 'Tốt';
+            return 'Rất mạnh';
+        }
+    </script>
+    <script src="theme.js"></script>
+</body>
+</html>

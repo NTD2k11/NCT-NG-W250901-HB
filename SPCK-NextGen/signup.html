@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký - BlogHub</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="theme.css">
+    <script type="module">
+      import { v4 as uuidv4 } from "https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/esm-browser/index.js";
+
+      window.uuidv4 = uuidv4;
+    </script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>📝 BlogHub</h1>
+                <p>Tạo tài khoản mới</p>
+                <button class="btn-icon"><i class="fas fa-moon"></i></button>
+            </div>
+
+            <form id="signupForm" class="auth-form">
+                <div class="form-group">
+                    <label for="fullname">Họ và tên</label>
+                    <input 
+                        type="text" 
+                        id="fullname" 
+                        name="fullname" 
+                        placeholder="Nhập họ và tên"
+                        autocomplete="name"
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="your@email.com"
+                        autocomplete="email"
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Ít nhất 6 ký tự"
+                        autocomplete="new-password"
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Xác nhận mật khẩu</label>
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        placeholder="Nhập lại mật khẩu"
+                        autocomplete="new-password"
+                        required
+                    />
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms" name="terms" required />
+                    <label for="terms">Tôi đồng ý với <a href="#">Điều khoản sử dụng</a></label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Tạo tài khoản</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Đã có tài khoản? <a href="login.html">Đăng nhập tại đây</a></p>
+                <p><a href="dashboard.html">→ Đi đến Dashboard</a> | <a href="account.html">👤 Tài khoản</a> | <a href="index.html">← Quay lại trang chủ</a></p>
+            </div>
+        </div>
+
+        <div class="auth-bg">
+            <div class="bg-shape bg-1"></div>
+            <div class="bg-shape bg-2"></div>
+            <div class="bg-shape bg-3"></div>
+        </div>
+    </div>
+
+    <script type="module" src="auth.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

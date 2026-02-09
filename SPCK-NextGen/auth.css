@@ -1,0 +1,435 @@
+/* ====================================
+   AUTH PAGES: Login & Signup Styling
+==================================== */
+:root {
+    --primary: #7b8cff;
+    --primary-dark: #6573e6;
+    --primary-light: #b5c3ff;
+    --bg: #f3f4ff;
+    --card: #ffffff;
+    --text: #333;
+    --subtext: #555;
+    --error: #d32f2f;
+    --success: #4caf50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ====== AUTH CONTAINER ====== */
+.auth-container {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    z-index: 1;
+}
+
+.auth-card {
+    background: var(--card);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(123, 140, 255, 0.15);
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Auth header */
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.auth-header h1 {
+    font-size: 32px;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+}
+
+.auth-header p {
+    color: var(--subtext);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.btn-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 12px;
+    background: var(--primary-light);
+    border: none;
+    color: var(--primary-dark);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+}
+
+.btn-icon:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn-icon:active {
+    transform: scale(0.95);
+}
+
+.btn-icon i {
+    transition: transform 0.3s ease;
+}
+
+.btn-icon:hover i {
+    transform: rotate(20deg);
+}
+
+/* ====== FORM ====== */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    padding: 12px 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: 0.2s;
+    background: #fafaff;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(123, 140, 255, 0.1);
+}
+
+/* Checkbox styling */
+.form-group.checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group.checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
+.form-group.checkbox label {
+    margin: 0;
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.form-group.checkbox a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-group.checkbox a:hover {
+    text-decoration: underline;
+}
+
+/* ====== BUTTONS ====== */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(123, 140, 255, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* ====== AUTH FOOTER ====== */
+.auth-footer {
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.auth-footer p {
+    font-size: 13px;
+    color: var(--subtext);
+    margin-bottom: 8px;
+}
+
+.auth-footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.auth-footer a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* ====== BACKGROUND SHAPES ====== */
+.auth-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.bg-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--primary);
+    top: -50px;
+    right: -50px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.bg-2 {
+    width: 200px;
+    height: 200px;
+    background: var(--primary-dark);
+    bottom: -30px;
+    left: -50px;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+.bg-3 {
+    width: 150px;
+    height: 150px;
+    background: var(--primary-light);
+    top: 50%;
+    left: 10%;
+    animation: float 10s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+/* ====== ERROR MESSAGE ====== */
+.error-message {
+    color: var(--error);
+    font-size: 12px;
+    margin-top: 4px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.form-group.error input {
+    border-color: var(--error);
+}
+
+/* ====== SUCCESS MESSAGE ====== */
+.success-message {
+    background: #e8f5e9;
+    color: var(--success);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: none;
+    font-size: 14px;
+}
+
+.success-message.show {
+    display: block;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 30px 20px;
+    }
+
+    .auth-header h1 {
+        font-size: 28px;
+    }
+
+    .form-group {
+        gap: 6px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .bg-1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .bg-2 {
+        width: 150px;
+        height: 150px;
+    }
+
+    .bg-3 {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-container {
+        max-width: 100%;
+    }
+
+    .auth-card {
+        padding: 24px 16px;
+    }
+
+    .auth-header h1 {
+        font-size: 24px;
+    }
+
+    .auth-header p {
+        font-size: 12px;
+    }
+
+    .form-group {
+        gap: 6px;
+    }
+
+    .form-group input {
+        padding: 10px 10px;
+        font-size: 14px;
+    }
+
+    .auth-footer {
+        margin-top: 16px;
+        padding-top: 16px;
+    }
+
+    .auth-footer p {
+        font-size: 12px;
+    }
+}
+/* đặt container chính chứa form */
+.auth-container { /* thay bằng selector thực tế của wrapper form nếu khác */
+  position: relative;
+  z-index: 1;
+}
+
+/* nền hình dạng */
+.auth-bg {
+  position: absolute; /* hoặc fixed nếu muốn */
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  z-index: 0;
+  pointer-events: none; /* không chặn click/typing */
+}
+
+/* nếu từng shape có z-index riêng, đảm bảo thấp */
+.auth-bg .bg-shape {
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* đảm bảo các input/button nằm phía trên */
+.auth-container input,
+.auth-container button {
+  position: relative;
+  z-index: 2;
+}

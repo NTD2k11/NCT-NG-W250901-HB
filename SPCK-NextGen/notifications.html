@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông báo - BlogHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="notifications.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">📝 BlogHub</div>
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-item">📊 Dashboard</a>
+                <a href="explore.html" class="nav-item">🔍 Khám phá</a>
+                <a href="notifications.html" class="nav-item active">🔔 Thông báo</a>
+                <a href="profile.html" class="nav-item">👤 Hồ sơ</a>
+                <a href="Blog/blog.html" class="nav-item">📚 Bài viết</a>
+                <a href="account.html" class="nav-item">⚙️ Tài khoản</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-icon"><i class="fas fa-search"></i></button>
+                <button class="btn-icon"><i class="fas fa-moon"></i></button>
+                <button class="btn-logout">🚪 Đăng xuất</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="notifications-container">
+        <!-- LEFT SIDEBAR - FILTERS -->
+        <aside class="notifications-sidebar">
+            <div class="filter-section">
+                <h3>Bộ lọc</h3>
+                <div class="filter-item">
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked />
+                        <span>Tất cả thông báo</span>
+                    </label>
+                </div>
+                <div class="filter-item">
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked />
+                        <span>💬 Bình luận</span>
+                    </label>
+                </div>
+                <div class="filter-item">
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked />
+                        <span>❤️ Lượt thích</span>
+                    </label>
+                </div>
+                <div class="filter-item">
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked />
+                        <span>👥 Theo dõi</span>
+                    </label>
+                </div>
+                <div class="filter-item">
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked />
+                        <span>📧 Email</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Thời gian</h3>
+                <div class="filter-item">
+                    <label class="filter-checkbox">
+                        <input type="radio" name="time" checked />
+                        <span>Hôm nay</span>
+                    </label>
+                </div>
+                <div class="filter-item">
+                    <label class="filter-checkbox">
+                        <input type="radio" name="time" />
+                        <span>Tuần này</span>
+                    </label>
+                </div>
+                <div class="filter-item">
+                    <label class="filter-checkbox">
+                        <input type="radio" name="time" />
+                        <span>Tháng này</span>
+                    </label>
+                </div>
+                <div class="filter-item">
+                    <label class="filter-checkbox">
+                        <input type="radio" name="time" />
+                        <span>Tất cả</span>
+                    </label>
+                </div>
+            </div>
+
+            <button class="btn btn-secondary btn-block">🗑️ Xóa tất cả</button>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="notifications-content">
+            <div class="content-header">
+                <h2>🔔 Thông báo</h2>
+                <div class="header-actions-content">
+                    <button class="btn btn-small btn-secondary">Đánh dấu là đã đọc</button>
+                    <button class="btn btn-small btn-secondary">⚙️ Cài đặt</button>
+                </div>
+            </div>
+
+            <!-- UNREAD SECTION -->
+            <section class="notifications-section">
+                <h3 class="section-title">📍 Chưa đọc</h3>
+                
+                <div class="notification-item unread">
+                    <div class="notification-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Tran+Duc&size=48&background=7b8cff&color=fff" alt="Avatar">
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <p class="notification-title"><strong>Trần Đức</strong> đã bình luận về bài viết của bạn</p>
+                            <span class="notification-time">2 giờ trước</span>
+                        </div>
+                        <p class="notification-message">"Bài viết này rất hay! Bạn có thể giải thích thêm về phần này không?"</p>
+                        <div class="notification-actions">
+                            <button class="btn btn-small btn-primary">Xem bình luận</button>
+                            <button class="btn btn-small btn-secondary">Trả lời</button>
+                        </div>
+                    </div>
+                    <div class="notification-indicator"></div>
+                </div>
+
+                <div class="notification-item unread">
+                    <div class="notification-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Le+Thuy&size=48&background=4caf50&color=fff" alt="Avatar">
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <p class="notification-title"><strong>Lê Thuỷ</strong> vừa theo dõi bạn</p>
+                            <span class="notification-time">5 giờ trước</span>
+                        </div>
+                        <p class="notification-message">Lê Thuỷ là một blogger tích cực trong cộng đồng</p>
+                        <div class="notification-actions">
+                            <button class="btn btn-small btn-primary">Theo dõi lại</button>
+                            <button class="btn btn-small btn-secondary">Xem hồ sơ</button>
+                        </div>
+                    </div>
+                    <div class="notification-indicator"></div>
+                </div>
+
+                <div class="notification-item unread">
+                    <div class="notification-avatar">
+                        <span class="notification-icon">❤️</span>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <p class="notification-title"><strong>312 người</strong> đã thích bài viết "CSS Grid - Hướng dẫn đầy đủ"</p>
+                            <span class="notification-time">1 ngày trước</span>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-small btn-primary">Xem bài viết</button>
+                        </div>
+                    </div>
+                    <div class="notification-indicator"></div>
+                </div>
+            </section>
+
+            <!-- READ SECTION -->
+            <section class="notifications-section">
+                <h3 class="section-title">📖 Đã đọc</h3>
+
+                <div class="notification-item">
+                    <div class="notification-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Pham+Nam&size=48&background=ff9800&color=fff" alt="Avatar">
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <p class="notification-title"><strong>Phạm Nam</strong> đã bình luận về bài viết của bạn</p>
+                            <span class="notification-time">2 ngày trước</span>
+                        </div>
+                        <p class="notification-message">"Cảm ơn bạn đã chia sẻ kiến thức quý báu này!"</p>
+                        <div class="notification-actions">
+                            <button class="btn btn-small btn-secondary">Xem bình luận</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-avatar">
+                        <span class="notification-icon">📧</span>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <p class="notification-title">Xác nhận email thay đổi</p>
+                            <span class="notification-time">3 ngày trước</span>
+                        </div>
+                        <p class="notification-message">Email của bạn đã được cập nhật thành công</p>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Hoang+Anh&size=48&background=e91e63&color=fff" alt="Avatar">
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <p class="notification-title"><strong>Hoàng Anh</strong> vừa theo dõi bạn</p>
+                            <span class="notification-time">5 ngày trước</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-avatar">
+                        <span class="notification-icon">🎉</span>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <p class="notification-title">Chúc mừng! Bài viết của bạn đạt 1K lượt thích</p>
+                            <span class="notification-time">1 tuần trước</span>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-small btn-primary">Xem bài viết</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EMPTY STATE -->
+            <section class="notifications-section" id="emptyState" style="display: none;">
+                <div class="empty-state">
+                    <div class="empty-icon">🔔</div>
+                    <h3>Không có thông báo</h3>
+                    <p>Bạn đã xem hết tất cả thông báo. Quay lại kiểm tra sau!</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 BlogHub. Tất cả quyền được bảo lưu.</p>
+        <div class="footer-links">
+            <a href="index.html">Trang chủ</a>
+            <a href="About/about.html">Về chúng tôi</a>
+            <a href="Contact/contact.html">Liên hệ</a>
+            <a href="#">Chính sách riêng tư</a>
+        </div>
+    </footer>
+
+    </script>
+    <script src="theme.js"></script>
+        // Mark as read functionality
+        document.querySelectorAll('.notification-item.unread').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.remove('unread');
+            });
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-checkbox input').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                // Add filter logic here
+            });
+        });
+    </script>
+    <script src="theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi ti?t b?i vi?t - BlogHub</title>
+    <link rel="stylesheet" href="../theme.css">
+    <link rel="stylesheet" href="./post-detail.css">
+</head>
+<body>
+    <header class="detail-header">
+        <div class="header-inner">
+            <a class="back-link" href="../Home/home-modern.html">? Quay l?i Trang ch?</a>
+            <div class="header-actions">
+                <button class="btn-icon" aria-label="??i giao di?n"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="detail-container">
+        <div class="cover">
+            <img id="postImage" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=700&fit=crop" alt="">
+        </div>
+
+        <div class="meta">
+            <span id="postCategory" class="category">Kh?c</span>
+            <h1 id="postTitle">?ang t?i b?i vi?t...</h1>
+            <div class="meta-row">
+                <span id="postAuthor">?n danh</span>
+                <span class="dot">?</span>
+                <span id="postDate">V?a xong</span>
+            </div>
+            <div class="meta-row stats">
+                <span>??? <strong id="postViews">0</strong></span>
+                <span>?? <strong id="postLikes">0</strong></span>
+            </div>
+        </div>
+
+        <article id="postContent" class="content"></article>
+
+        <div id="postEmpty" class="empty" hidden>
+            Kh?ng t?m th?y b?i vi?t ho?c b?i vi?t ?? b? g?.
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+    <script type="module" src="./post-detail.js"></script>
+    <script src="../theme.js"></script>
+</body>
+</html>

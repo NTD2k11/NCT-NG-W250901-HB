@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài viết của tôi</title>
     <link rel="stylesheet" href="blog.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../theme.css" />
+        <script type="module">
+        import { v4 as uuidv4 } from "https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/esm-browser/index.js";
+
+        window.uuidv4 = uuidv4;
+    </script>
 </head>
 
 <body>
     <div class="sidebar">
-        <h2 class="logo">MyBlog</h2>
+        <h2 class="logo">📝 BlogHub</h2>
+        <button class="btn-icon"><i class="fas fa-moon"></i></button>
         <ul>
-            <li><a href="../Home/home.html">📝 Trang chủ</a></li>
-            <li><a href="#">✏️ Tạo bài viết</a></li>
+            <li><a href="../dashboard.html">📊 Dashboard</a></li>
+            <li><a href="../Home/home-modern.html">📝 Trang chủ</a></li>
+            <li><a href="create.html">✏️ Tạo bài viết</a></li>
             <li><a href="#" class="active">📚 Bài viết của tôi</a></li>
-            <li><a href="../Settings/settings.html">⚙️ Cài đặt</a></li>
-            <li><a href="../About/about.html">ℹ️ Về chúng tôi</a></li>
+            <li><a href="info.html">ℹ️ Thông tin</a></li>
+            <li><a href="../notifications.html">🔔 Thông báo</a></li>
+            <li><a href="../account.html">👤 Tài khoản</a></li>
+            <li><a href="../About/about.html">📖 Về chúng tôi</a></li>
         </ul>
     </div>
 
@@ -25,38 +36,35 @@
             <p>Quản lý những bài viết của bạn</p>
         </div>
 
-        <div class="blog-list">
-            <div class="blog-card">
-                <h3>Những điều mình học được hôm nay</h3>
-                <p>Ghi chú vài dòng về bài học cuộc sống...</p>
+        <div class="main-top">
+            <div class="content">
+                <div class="action-row">
+                    <a class="btn-create" href="create.html">✚ Tạo bài viết mới</a>
+                </div>
 
-                <div class="actions">
-                    <button class="edit">Chỉnh sửa</button>
-                    <button class="delete">Xóa</button>
+                <div class="blog-list"> 
+
                 </div>
             </div>
 
-            <div class="blog-card">
-                <h3>Cảm xúc cuối ngày</h3>
-                <p>Một ngày dài nhưng nhiều điều đáng nhớ...</p>
-
-                <div class="actions">
-                    <button class="edit">Chỉnh sửa</button>
-                    <button class="delete">Xóa</button>
+            <aside class="info-panel">
+                <div class="panel-card">
+                    <h3>Thông tin blog</h3>
+                    <p class="bio">Chào mừng đến với trang blog của bạn — nơi chia sẻ ý tưởng và trải nghiệm.</p>
+                    <ul class="stats">
+                        <li>📝 Bài viết: <strong>3</strong></li>
+                        <li>👥 Người theo dõi: <strong>120</strong></li>
+                        <li>⭐ Đánh giá trung bình: <strong>4.8</strong></li>
+                    </ul>
+                    <a class="btn btn-outline" href="info.html">Xem chi tiết</a>
                 </div>
-            </div>
-
-            <div class="blog-card">
-                <h3>Lập trình là nghệ thuật</h3>
-                <p>Những suy nghĩ về lập trình và phát triển phần mềm...</p>
-
-                <div class="actions">
-                    <button class="edit">Chỉnh sửa</button>
-                    <button class="delete">Xóa</button>
-                </div>
-            </div>
+            </aside>
         </div>
     </div>
-</body>
 
-</html>
+        <script src="../theme.js"></script>
+        <script type="module" src="blog.js"></script>
+
+    </body>
+
+    </html>

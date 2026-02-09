@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nền Tảng Đăng Blog Cá Nhân</title>
+    <link rel="stylesheet" href="create.css">
+    <link rel="stylesheet" href="../theme.css">
+    <script type="module">
+        import { v4 as uuidv4 } from "https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/esm-browser/index.js";
+
+        window.uuidv4 = uuidv4;
+    </script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>📝 BlogHub <button class="btn-icon"><i class="fas fa-moon"></i></button></h2>
+        <div class="menu">
+            <a href="../dashboard.html">📊 Dashboard</a>
+            <a href="../Home/home-modern.html">📝 Trang chủ</a>
+            <a href="create.html">✏️ Tạo bài viết</a>
+            <a href="blog.html">📚 Blog của tôi</a>
+            <a href="../notifications.html">🔔 Thông báo</a>
+            <a href="../account.html">👤 Tài khoản</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <div class="card">
+            <h2>📝 Viết Blog Mới</h2>
+
+            <form id="createForm">
+                <label for="title">Tiêu đề</label>
+                <input id="title" name="title" type="text" placeholder="Tiêu đề bài viết..." />
+
+                <label for="content">Nội dung</label>
+                <textarea id="content" name="content" placeholder="Nội dung blog của bạn..."></textarea>
+
+                <div class="action-row">
+                    <button type="button" class="btn btn-outline" id="btnPreview">Preview</button>
+                    <button type="button" class="btn" id="btnSave">Save Draft</button>
+                    <button type="button" class="btn btn-primary" id="btnPublish">Publish</button>
+                    <button type="button" class="btn btn-cancel" id="btnCancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>📌 Bài viết gần đây</h2>
+
+            <div id="recentPosts">
+
+            </div>
+        </div>
+    </div>
+<script src="../theme.js"></script>
+<script type="module" src="create.js"></script>
+</body>
+
+</html>

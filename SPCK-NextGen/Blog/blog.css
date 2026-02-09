@@ -46,6 +46,41 @@ body {
     margin-bottom: 30px;
 }
 
+.btn-icon {
+    width: 44px;
+    height: 44px;
+    padding: 10px 12px;
+    border: 2px solid var(--primary);
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--primary);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.btn-icon:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn-icon:active {
+    transform: scale(0.95);
+}
+
+.btn-icon i {
+    transition: transform 0.3s ease;
+}
+
+.btn-icon:hover i {
+    transform: rotate(20deg);
+}
+
 .sidebar ul {
     list-style: none;
     padding: 0;
@@ -95,6 +130,107 @@ body {
     color: var(--subtext);
     margin: 0;
     font-size: 14px;
+}
+
+/* Action row for buttons near header */
+.action-row {
+    margin: 16px 0 0;
+}
+
+.btn-create {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(123,140,255,0.12);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn-create:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(101,115,230,0.18);
+}
+
+@media (max-width: 480px) {
+    .btn-create {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+}
+
+/* main top layout */
+.main-top {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.main-top .content {
+    flex: 1 1 65%;
+}
+
+.info-panel {
+    width: 320px;
+}
+
+.panel-card {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--primary);
+}
+
+.panel-card h3 {
+    margin: 0 0 8px 0;
+    color: var(--primary-dark);
+}
+
+.panel-card .bio {
+    color: var(--subtext);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.panel-card .stats {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+
+.panel-card .stats li {
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid rgba(101,115,230,0.12);
+    text-decoration: none;
+    color: var(--primary-dark);
+}
+
+.btn-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #f3f6ff;
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+@media (max-width: 992px) {
+    .main-top { flex-direction: column; }
+    .info-panel { width: 100%; }
 }
 
 /* ===========================

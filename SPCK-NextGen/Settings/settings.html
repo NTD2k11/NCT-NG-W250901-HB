@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cài đặt</title>
     <link rel="stylesheet" href="settings.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../theme.css" />
+        <script type="module">
+        import { v4 as uuidv4 } from "https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/esm-browser/index.js";
+
+        window.uuidv4 = uuidv4;
+    </script>
 </head>
 
 <body>
     <div class="sidebar">
-        <h2 class="logo">MyBlog</h2>
+        <h2 class="logo">📝 BlogHub</h2>
+        <button class="btn-icon"><i class="fas fa-moon"></i></button>
         <ul>
-            <li><a href="../Home/home.html">📝 Trang chủ</a></li>
-            <li><a href="#">✏️ Tạo bài viết</a></li>
+            <li><a href="../dashboard.html">📊 Dashboard</a></li>
+            <li><a href="../Home/home-modern.html">📝 Trang chủ</a></li>
+            <li><a href="../Blog/create.html">✏️ Tạo bài viết</a></li>
             <li><a href="../Blog/blog.html">📚 Bài viết của tôi</a></li>
             <li><a href="#" class="active">⚙️ Cài đặt</a></li>
-            <li><a href="../About/about.html">ℹ️ Về chúng tôi</a></li>
+            <li><a href="../notifications.html">🔔 Thông báo</a></li>
+            <li><a href="../account.html">👤 Tài khoản</a></li>
+            <li><a href="../About/about.html">📖 Về chúng tôi</a></li>
         </ul>
     </div>
 
@@ -104,4 +115,5 @@
     </div>
 </body>
 
+    <script src="../theme.js"></script>
 </html>

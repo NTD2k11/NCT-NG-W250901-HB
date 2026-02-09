@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Thông tin Blog</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../theme.css">
+        <script type="module">
+        import { v4 as uuidv4 } from "https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/esm-browser/index.js";
+
+        window.uuidv4 = uuidv4;
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2 class="logo">📝 BlogHub</h2>
+        <button class="btn-icon"><i class="fas fa-moon"></i></button>
+        <ul>
+            <li><a href="../dashboard.html">📊 Dashboard</a></li>
+            <li><a href="../Home/home-modern.html">📝 Trang chủ</a></li>
+            <li><a href="create.html">✏️ Tạo bài viết</a></li>
+            <li><a href="blog.html">📚 Bài viết của tôi</a></li>
+            <li><a href="#" class="active">ℹ️ Thông tin</a></li>
+            <li><a href="../notifications.html">🔔 Thông báo</a></li>
+            <li><a href="../account.html">👤 Tài khoản</a></li>
+            <li><a href="../About/about.html">📖 Về chúng tôi</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div class="settings-header">
+            <h1>ℹ️ Thông tin blog</h1>
+            <p>Thông tin chi tiết về blog cá nhân của bạn</p>
+        </div>
+
+        <div class="card">
+            <h2>Giới thiệu</h2>
+            <p>Đây là trang thông tin dành cho blog cá nhân. Bạn có thể thêm mô tả, chính sách, liên kết mạng xã hội, hoặc thông tin liên hệ ở đây để độc giả biết thêm về bạn.</p>
+        </div>
+
+        <div class="card">
+            <h2>Thống kê</h2>
+            <ul>
+                <li>📝 Tổng bài viết: <strong id="stat-posts">3</strong></li>
+                <li>👥 Người theo dõi: <strong id="stat-followers">120</strong></li>
+                <li>⭐ Bình chọn trung bình: <strong id="stat-rating">4.8</strong></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Liên kết nhanh</h2>
+            <p><a href="create.html">✏️ Tạo bài viết mới</a> · <a href="blog.html">📚 Danh sách bài viết</a></p>
+        </div>
+    </div>
+</body>
+    <script src="../theme.js"></script>
+</html>

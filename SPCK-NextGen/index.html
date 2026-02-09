@@ -4,150 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPCK NextGen - Trang chủ dự án</title>
-    <style>
-        :root {
-            --primary: #7b8cff;
-            --primary-dark: #6573e6;
-            --bg: #f3f4ff;
-            --card: #ffffff;
-            --text: #333;
-            --subtext: #555;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Segoe UI", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            border-radius: 12px;
-            margin-bottom: 50px;
-        }
-
-        header h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 18px;
-            opacity: 0.9;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: 0.3s;
-            font-weight: 600;
-        }
-
-        .nav-links a:hover {
-            background: white;
-            color: var(--primary);
-        }
-
-        .project-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .info-card {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid var(--primary);
-        }
-
-        .info-card h2 {
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .info-card p {
-            color: var(--subtext);
-            line-height: 1.6;
-        }
-
-        .file-structure {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            margin-bottom: 50px;
-        }
-
-        .file-structure h2 {
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .file-structure pre {
-            background: #2d2d2d;
-            color: #f8f8f2;
-            padding: 20px;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            background: var(--card);
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-        }
-
-        footer p {
-            margin-bottom: 10px;
-            color: var(--subtext);
-        }
-
-        footer a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        footer a:hover {
-            color: var(--primary-dark);
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body>
     <div class="container">
@@ -155,11 +14,16 @@
             <h1>🚀 SPCK NextGen Project</h1>
             <p>Dự án phát triển nền tảng blog hiện đại</p>
             <div class="nav-links">
-                <a href="Home/home.html">📝 Trang chủ blog</a>
+                <a href="dashboard.html">📊 Dashboard</a>
+                <a href="Home/home-modern.html">📝 Trang chủ blog</a>
                 <a href="Blog/blog.html">📚 Bài viết của tôi</a>
                 <a href="Settings/settings.html">⚙️ Cài đặt</a>
+                <a href="account.html">👤 Tài khoản</a>
                 <a href="About/about.html">📖 Về chúng tôi</a>
                 <a href="Contact/contact.html">📧 Liên hệ</a>
+                <a href="login.html" class="btn-login">🔐 Đăng nhập</a>
+                <a href="signup.html" class="btn-signup">✨ Đăng ký</a>
+                <button class="btn-icon"><i class="fas fa-moon"></i></button>
             </div>
         </header>
 
@@ -209,8 +73,9 @@
 
         <footer>
             <p>&copy; 2025 SPCK NextGen Project. Tất cả quyền được bảo lưu.</p>
-            <p><a href="Home/home.html">← Trang chủ blog</a> | <a href="../index.html">Dự án khác</a></p>
+            <p><a href="Home/home-modern.html">← Trang chủ blog</a> | <a href="../index.html">Dự án khác</a></p>
         </footer>
     </div>
+    <script src="theme.js"></script>
 </body>
 </html>

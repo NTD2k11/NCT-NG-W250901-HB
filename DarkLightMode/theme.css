@@ -1,0 +1,74 @@
+:root {
+    --bg: #ffffff;
+    --card-bg: #f7f7f8;
+    --text: #111827;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --btn-bg: #111827;
+    --btn-text: #ffffff;
+}
+
+[data-theme="dark"] {
+    --bg: #0b1220;
+    --card-bg: #0f1724;
+    --text: #e6eef8;
+    --muted: #9aa6b2;
+    --accent: #60a5fa;
+    --btn-bg: #e6eef8;
+    --btn-text: #0b1220;
+}
+
+html, body {
+    background: var(--bg);
+    color: var(--text);
+    transition: background-color 220ms ease, color 220ms ease;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.info-card {
+    background: var(--card-bg);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.nav-links a {
+    color: var(--text);
+}
+
+#theme-toggle {
+    margin-left: 12px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#theme-toggle:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.btn-icon {
+    transition: all 0.3s ease !important;
+}
+
+.btn-icon i {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html, body { transition: none; }
+    .btn-icon,
+    .btn-icon i {
+        transition: none !important;
+    }
+}
