@@ -16,7 +16,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
 
-let allPosts = []; // lưu toàn bộ bài để search
+let allPosts = [];
 
 function formatDate(t) {
   return t ? new Date(t).toLocaleDateString("vi-VN") : "Vừa xong";
@@ -101,13 +101,13 @@ document.addEventListener("click", e => {
 
 // AUTH CHECK
 onAuthStateChanged(auth, user => {
-  if (!user) window.location.href = "../login.html";
+  if (!user) window.location.href = "../Login/login.html";
 });
 
 // LOGOUT
 document.querySelector(".btn-logout")?.addEventListener("click", async () => {
   await signOut(auth);
-  window.location.href = "../login.html";
+  window.location.href = "../Login/login.html";
 });
 
 loadPosts();

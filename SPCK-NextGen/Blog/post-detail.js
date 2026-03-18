@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
 import { getDatabase, ref, get, update } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
 
-// ===== Firebase =====
+// Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyDyRkCG8hgpUIBM7qh5_XO7L6wvwtjX99E",
   authDomain: "nct-ng-w250901-hb.firebaseapp.com",
@@ -15,11 +15,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// ===== Lấy ID bài viết từ URL =====
+// Lấy ID bài viết từ URL
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get("id");
 
-// ===== DOM =====
+// DOM
 const titleEl = document.getElementById("postTitle");
 const contentEl = document.getElementById("postContent");
 const authorEl = document.getElementById("postAuthor");
@@ -29,12 +29,12 @@ const likesEl = document.getElementById("postLikes");
 const likeBtn = document.getElementById("likeBtn");
 const likeCount = document.getElementById("likeCount");
 
-// ===== Format ngày =====
+// Format ngày
 function formatDate(t) {
   return t ? new Date(t).toLocaleDateString("vi-VN") : "Vừa xong";
 }
 
-// ===== Tăng view =====
+// Tăng view
 async function increaseViews() {
   const snap = await get(ref(db, `posts/${postId}/views`));
   const current = snap.val() || 0;
@@ -42,7 +42,7 @@ async function increaseViews() {
   viewsEl.textContent = current + 1;
 }
 
-// ===== Load Like =====
+// Load Like
 async function loadLikes() {
   const snap = await get(ref(db, `posts/${postId}/likes`));
   const likes = snap.val() || 0;
@@ -50,7 +50,7 @@ async function loadLikes() {
   likesEl.textContent = likes;
 }
 
-// ===== Toggle Like =====
+// Toggle Like
 async function toggleLike() {
   const snap = await get(ref(db, `posts/${postId}/likes`));
   const current = snap.val() || 0;
@@ -63,7 +63,7 @@ async function toggleLike() {
   likesEl.textContent = newLikes;
 }
 
-// ===== Load bài viết =====
+// Load bài viết
 async function loadPost() {
   if (!postId) return;
 
@@ -84,7 +84,7 @@ async function loadPost() {
   await loadLikes();
 }
 
-// ===== Events =====
+// Events
 likeBtn?.addEventListener("click", toggleLike);
 
 document.getElementById("shareBtn")?.addEventListener("click", () => {
@@ -93,3 +93,5 @@ document.getElementById("shareBtn")?.addEventListener("click", () => {
 });
 
 loadPost();
+
+

@@ -31,8 +31,9 @@ body {
 
 /* ====== HEADER ====== */
 .header {
-    background: var(--card);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    box-shadow: var(--shadow);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -50,7 +51,7 @@ body {
 .logo {
     font-size: 24px;
     font-weight: 700;
-    color: var(--primary-dark);
+    color: white;
     min-width: fit-content;
 }
 
@@ -62,7 +63,7 @@ body {
 
 .nav-item {
     text-decoration: none;
-    color: var(--subtext);
+    color: rgba(255, 255, 255, 0.85);
     font-weight: 600;
     padding: 8px 12px;
     border-radius: 8px;
@@ -72,8 +73,8 @@ body {
 
 .nav-item:hover,
 .nav-item.active {
-    color: var(--primary);
-    background: var(--bg);
+    color: white;
+    background: rgba(255, 255, 255, 0.18);
 }
 
 .header-actions {

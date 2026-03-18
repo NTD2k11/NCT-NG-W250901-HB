@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ - BlogHub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="./home-modern.css">
-    <link rel="stylesheet" href="../theme.css">
+    <link rel="stylesheet" href="../Home/home-modern.css">
+    <link rel="stylesheet" href="../DarkLightMode/theme.css">
 </head>
 <body>
     <!-- HEADER -->
@@ -14,11 +14,11 @@
         <div class="header-content">
             <div class="logo">📖 BlogHub</div>
             <nav class="nav">
-                <a href="../dashboard.html" class="nav-item">📊 Dashboard</a>
+                <a href="../Home/Dashboard/dashboard.html" class="nav-item">📊 Dashboard</a>
                 <a href="#" class="nav-item active">📝 Trang chủ</a>
                 <a href="../Blog/blog.html" class="nav-item">📚 Bài viết</a>
                 <a href="../notifications.html" class="nav-item">🔔 Thông báo</a>
-                <a href="../account.html" class="nav-item">👤 Tài khoản</a>
+                <a href="../Profile/account.html" class="nav-item">👤 Tài khoản</a>
             </nav>
             <div class="header-actions">
                 <button class="btn-icon"><i class="fas fa-search"></i></button>
@@ -79,7 +79,7 @@
             <div class="content-header">
                 <h2>📰 Bài viết hôm nay</h2>
                 <div class="search-box">
-                    <input type="text" placeholder="Tìm kiếm bài viết...">
+                    <input id="searchInput" type="text" placeholder="Tìm kiếm bài viết...">
                     <button class="btn btn-small btn-primary">🔍</button>
                 </div>
             </div>
@@ -176,7 +176,7 @@
             <a href="#">Chính sách riêng tư</a>
         </div>
     </footer>
-    <script type="module" src="./home-mordern.js"></script>
-    <script src="../theme.js"></script>
+    <script type="module" src="home-modern.js"></script>
+    <script src="../DarkLightMode/theme.js"></script>
 </body>
 </html>

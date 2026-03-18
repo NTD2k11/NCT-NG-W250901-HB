@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết bài viết - BlogHub</title>
-    <link rel="stylesheet" href="../theme.css">
-    <link rel="stylesheet" href="./post-detail.css">
+    <link rel="stylesheet" href="../DarkLightMode/theme.css">
+    <link rel="stylesheet" href="/SPCK-NextGen/Blog/post-detail.css">
 </head>
 <body>
     <header class="detail-header">
         <div class="header-inner">
-            <a class="back-link" href="../Home/home-modern.html">Quay lại Trang chủ</a>
+            <a class="back-link" href="/SPCK-NextGen/Home/home-modern.html">Quay lại Trang chủ</a>
             <div class="header-actions">
                 <button class="btn-icon" aria-label="Đổi giao diện"><i class="fas fa-moon"></i></button>
             </div>
@@ -49,12 +49,25 @@
     <div id="postEmpty" class="empty" hidden>
         Không tìm thấy bài viết hoặc bài viết đã bị gỡ.
     </div>
+    
+    <section class="comments" id="comments-section">
+        <h2>Bình luận</h2>
 
+        <div class="comment-form">
+            <textarea id="comment-text" rows="3" placeholder="Viết bình luận..."></textarea>
+            <div class="comment-actions">
+                <button id="submit-comment">Gửi bình luận</button>
+            </div>
+        </div>
 
+        <div id="comments-list" class="comments-list">
+
+        </div>
+    </section>
 </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
-    <script type="module" src="./post-detail.js"></script>
-    <script src="../theme.js"></script>
+    <script type="module" src="/SPCK-NextGen/Blog/post-detail.js"></script>
+    <script src="../DarkLightMode/theme.js"></script>
 </body>
 </html>

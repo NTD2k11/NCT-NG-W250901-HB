@@ -1,9 +1,21 @@
 :root {
     --bg: #ffffff;
     --card-bg: #f7f7f8;
+    --card: #ffffff;
     --text: #111827;
     --muted: #6b7280;
+    --subtext: #555;
+    --border: #e0e0e0;
+    --sidebar-bg: #f1f3ff;
     --accent: #2563eb;
+    --primary: #7b8cff;
+    --primary-dark: #6573e6;
+    --primary-light: #b5c3ff;
+    --success: #4caf50;
+    --danger: #f44336;
+    --warning: #ff9800;
+    --shadow: 0 4px 15px rgba(123, 140, 255, 0.1);
+    --shadow-lg: 0 8px 25px rgba(123, 140, 255, 0.15);
     --btn-bg: #111827;
     --btn-text: #ffffff;
 }
@@ -11,9 +23,21 @@
 [data-theme="dark"] {
     --bg: #0b1220;
     --card-bg: #0f1724;
+    --card: #1a1f3a;
     --text: #e6eef8;
     --muted: #9aa6b2;
+    --subtext: #a8b5c8;
+    --border: #2a3550;
+    --sidebar-bg: #141829;
     --accent: #60a5fa;
+    --primary: #7b8cff;
+    --primary-dark: #5c6bff;
+    --primary-light: #2a3f8a;
+    --success: #4caf50;
+    --danger: #f44336;
+    --warning: #ff9800;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.4);
     --btn-bg: #e6eef8;
     --btn-text: #0b1220;
 }

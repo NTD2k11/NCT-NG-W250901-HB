@@ -6,8 +6,7 @@
     <title>Tài khoản của tôi - BlogHub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="account.css">
-    <link rel="stylesheet" href="theme.css">
-    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="../DarkLightMode/theme.css">
 </head>
 <body>
     <!-- HEADER -->
@@ -15,10 +14,10 @@
         <div class="header-content">
             <div class="logo">📝 BlogHub</div>
             <nav class="nav">
-                <a href="dashboard.html" class="nav-item">📊 Dashboard</a>
-                <a href="Home/home-modern.html" class="nav-item">📝 Trang chủ</a>
-                <a href="Blog/blog.html" class="nav-item">📚 Bài viết</a>
-                <a href="notifications.html" class="nav-item">🔔 Thông báo</a>
+                <a href="../Home/Dashboard/dashboard.html" class="nav-item">📊 Dashboard</a>
+                <a href="../Home/home-modern.html" class="nav-item">📝 Trang chủ</a>
+                <a href="../Blog/blog.html" class="nav-item">📚 Bài viết</a>
+                <a href="../notifications.html" class="nav-item">🔔 Thông báo</a>
                 <a href="account.html" class="nav-item active">⚙️ Tài khoản</a>
             </nav>
             <div class="header-actions">
@@ -71,12 +70,12 @@
                     <div class="profile-header">
                         <div class="avatar-section">
                             <div class="avatar-large">
-                                <img src="https://ui-avatars.com/api/?name=Nguyen+Danh+Phuong&size=120&background=7b8cff&color=fff" alt="Avatar">
+                                <img id="avatar-img" src="https://ui-avatars.com/api/?name=👤&size=120&background=7b8cff&color=fff" alt="">
                             </div>
                             <button class="btn btn-secondary">Thay đổi ảnh</button>
                         </div>
                         <div class="profile-info">
-                            <h3>Nguyễn Danh Phương</h3>
+                            <h3 id="profile-name">Nguyễn Danh Phương</h3>
                             <p class="username">@nguyendanhphuong</p>
                             <p class="member-since">Thành viên từ 15/06/2024</p>
                         </div>
@@ -506,12 +505,13 @@
     <footer class="footer">
         <p>&copy; 2025 BlogHub. Tất cả quyền được bảo lưu.</p>
         <div class="footer-links">
-            <a href="index.html">Trang chủ</a>
-            <a href="About/about.html">Về chúng tôi</a>
-            <a href="Contact/contact.html">Liên hệ</a>
+            <a href="../Home/home-modern.html">Trang chủ</a>
+            <a href="../About/about.html">Về chúng tôi</a>
+            <a href="../Contact/contact.html">Liên hệ</a>
             <a href="#">Chính sách riêng tư</a>
         </div>
     </footer>
+    <script>
         // Tab switching functionality
         document.querySelectorAll('.menu-item').forEach(item => {
             item.addEventListener('click', function(e) {
@@ -565,6 +565,7 @@
             return 'Rất mạnh';
         }
     </script>
-    <script src="theme.js"></script>
+<script type="module" src="account.js"></script>
+<script src="../DarkLightMode/theme.js"></script>
 </body>
 </html>

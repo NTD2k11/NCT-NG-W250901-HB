@@ -11,6 +11,17 @@
     --sidebar-bg: #e8eaff;
 }
 
+[data-theme="dark"] {
+    --bg: #0a0e27;
+    --card: #1a1f3a;
+    --text: #e8ecf8;
+    --subtext: #a8b5c8;
+    --sidebar-bg: #141829;
+    --primary: #7b8cff;
+    --primary-dark: #5c6bff;
+    --primary-light: #2a3f8a;
+}
+
 /* ===========================
    CƠ BẢN
 =========================== */
@@ -222,10 +233,15 @@ body {
     gap: 8px;
     padding: 6px 10px;
     border-radius: 6px;
-    background: #f3f6ff;
+    background: var(--primary-light);
     color: var(--primary-dark);
     text-decoration: none;
     font-weight: 700;
+}
+
+.btn-view:hover {
+    background: var(--primary);
+    color: white;
 }
 
 @media (max-width: 992px) {
@@ -245,13 +261,14 @@ body {
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    box-shadow: var(--shadow);
     border-left: 5px solid var(--primary);
     transition: 0.15s;
 }
 
 .blog-card:hover {
     transform: translateX(4px);
+    box-shadow: var(--shadow-lg);
 }
 
 .blog-card h3 {

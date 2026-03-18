@@ -74,7 +74,7 @@ if (signupForm) {
   });
 }
 
-// ================= LOGIN (neu la trang login) =================
+// ================= LOGIN =================
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
@@ -92,7 +92,7 @@ if (loginForm) {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert("Dang nhap thanh cong!");
-      window.location.href = "dashboard.html";
+      window.location.href = "../Home/Dashboard/dashboard.html";
     } catch (err) {
       alert(err.message);
     }
@@ -102,6 +102,6 @@ if (loginForm) {
 // ================= AUTO REDIRECT IF LOGGED IN =================
 onAuthStateChanged(auth, (user) => {
   if (user && window.location.pathname.includes("login.html")) {
-    window.location.href = "dashboard.html";
+    window.location.href = "../Home/Dashboard/dashboard.html";
   }
 });

@@ -89,7 +89,7 @@ function addEvents() {
   editBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       const id = btn.dataset.id;
-      window.location.href = "create.html?id=" + id;
+      window.location.href = "../../Blog/create.html?id=" + id;
     });
   });
 }
@@ -140,7 +140,7 @@ const logoutBtn = document.querySelector(".btn-logout");
 logoutBtn?.addEventListener("click", async () => {
   try {
     await signOut(auth);
-    window.location.href = "login.html";
+    window.location.href = "../../Login/login.html";
   } catch (err) {
     console.error("Logout failed:", err);
     alert("Đăng xuất thất bại. Vui lòng thử lại.");
