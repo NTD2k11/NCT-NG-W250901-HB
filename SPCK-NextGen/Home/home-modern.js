@@ -107,6 +107,9 @@ onAuthStateChanged(auth, user => {
 // LOGOUT
 document.querySelector(".btn-logout")?.addEventListener("click", async () => {
   await signOut(auth);
+  localStorage.removeItem("user_id");
+  localStorage.removeItem("username");
+  localStorage.removeItem("user_email");
   window.location.href = "../Login/login.html";
 });
 

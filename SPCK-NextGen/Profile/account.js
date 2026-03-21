@@ -96,6 +96,9 @@ document.querySelector('.btn-primary')?.addEventListener('click', async () => {
 // ===== Logout =====
 document.querySelector('.btn-logout')?.addEventListener('click', async () => {
   await signOut(auth);
+  localStorage.removeItem("user_id");
+  localStorage.removeItem("username");
+  localStorage.removeItem("user_email");
   window.location.href = "../Login/login.html";
 });
 

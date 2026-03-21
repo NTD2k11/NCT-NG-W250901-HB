@@ -1,4 +1,4 @@
-import { auth, db } from "../auth.js";
+import { auth, db } from "../Login/auth.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
 import { ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
 
@@ -61,7 +61,10 @@ previewBtn?.addEventListener("click", () => {
 
 /* ========= LOAD BAI CUA USER ========= */
 onAuthStateChanged(auth, (user) => {
-  if (!user) return;
+  if (!user) {
+    window.location.href = "../Login/login.html";
+    return;
+  }
   if (!recentPostsDiv) return;
 
   const postsRef = ref(db, "posts");

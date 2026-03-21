@@ -1,5 +1,5 @@
-import { auth, db } from "./auth.js";
-import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+import { auth, db } from "../../Login/auth.js";
+import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
 import { ref, onValue, remove } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
 
 const listEl = document.querySelector(".posts-grid");
@@ -99,6 +99,7 @@ function addEvents() {
 onAuthStateChanged(auth, (user) => {
   if (!user) {
     showPosts([]);
+    window.location.href = "../../Login/login.html";
     return;
   }
 
@@ -140,6 +141,9 @@ const logoutBtn = document.querySelector(".btn-logout");
 logoutBtn?.addEventListener("click", async () => {
   try {
     await signOut(auth);
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("username");
+    localStorage.removeItem("user_email");
     window.location.href = "../../Login/login.html";
   } catch (err) {
     console.error("Logout failed:", err);

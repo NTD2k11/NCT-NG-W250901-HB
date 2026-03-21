@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Về chúng tôi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="/SPCK-NextGen/About/about.css">
+    <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="../DarkLightMode/theme.css">
         <script type="module">
         import { v4 as uuidv4 } from "https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/esm-browser/index.js";
@@ -19,11 +19,11 @@
         <div class="header-content">
             <div class="logo">📝 BlogHub</div>
             <nav class="nav">
-                <a href="/SPCK-NextGen/Home/Dashboard/dashboard.html" class="nav-item">📊 Dashboard</a>
-                <a href="/SPCK-NextGen/Home/home-modern.html" class="nav-item">📝 Trang chủ</a>
-                <a href="/SPCK-NextGen/Blog/blog.html" class="nav-item">📚 Bài viết</a>
-                <a href="/SPCK-NextGen/notifications.html" class="nav-item">🔔 Thông báo</a>
-                <a href="/SPCK-NextGen/Profile/account.html" class="nav-item">⚙️ Tài khoản</a>
+                <a href="../Home/Dashboard/dashboard.html" class="nav-item">📊 Dashboard</a>
+                <a href="../Home/home-modern.html" class="nav-item">📝 Trang chủ</a>
+                <a href="../Blog/blog.html" class="nav-item">📚 Bài viết</a>
+                <a href="../notifications.html" class="nav-item">🔔 Thông báo</a>
+                <a href="../Profile/account.html" class="nav-item">⚙️ Tài khoản</a>
             </nav>
             <div class="header-actions">
                 <button class="btn-icon"><i class="fas fa-search"></i></button>
@@ -86,17 +86,17 @@
             <h2>Đội ngũ phát triển</h2>
             <div class="team-members">
                 <div class="member">
-                    <img src="../images/member1.jpg" alt="Member">
+                    <img src="https://ui-avatars.com/api/?name=Nguyen+Danh+Phuong&size=160&background=7b8cff&color=fff" alt="Member">
                     <h4>Nguyễn Danh Phương</h4>
                     <p>Full Stack Developer</p>
                 </div>
                 <div class="member">
-                    <img src="../images/member2.jpg" alt="Member">
+                    <img src="https://ui-avatars.com/api/?name=Tran+Minh+Tuan&size=160&background=4caf50&color=fff" alt="Member">
                     <h4>Trần Minh Tuấn</h4>
                     <p>UI/UX Designer</p>
                 </div>
                 <div class="member">
-                    <img src="../images/member3.jpg" alt="Member">
+                    <img src="https://ui-avatars.com/api/?name=Le+Huong+Linh&size=160&background=ff9800&color=fff" alt="Member">
                     <h4>Lê Hương Linh</h4>
                     <p>Product Manager</p>
                 </div>
@@ -105,9 +105,27 @@
 
         <footer>
             <p>&copy; 2025 BlogHub. Tất cả quyền được bảo lưu.</p>
-            <p><a href="/SPCK-NextGen/Home/Dashboard/dashboard.html">📊 Dashboard</a> | <a href="/SPCK-NextGen/Profile/account.html">👤 Tài khoản</a> | <a href="/SPCK-NextGen/Home/home-modern.html">← Quay lại trang chủ</a></p>
+            <p><a href="../Home/Dashboard/dashboard.html">📊 Dashboard</a> | <a href="../Profile/account.html">👤 Tài khoản</a> | <a href="../Home/home-modern.html">← Quay lại trang chủ</a></p>
         </footer>
     </div>
 </body>
     <script src="../DarkLightMode/theme.js"></script>
+    <script type="module">
+        import { auth } from "../Login/auth.js";
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+
+        document.querySelector(".btn-logout")?.addEventListener("click", async () => {
+            await signOut(auth);
+            localStorage.removeItem("user_id");
+            localStorage.removeItem("username");
+            localStorage.removeItem("user_email");
+            window.location.href = "../Login/login.html";
+        });
+
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = "../Login/login.html";
+            }
+        });
+    </script>
 </html>

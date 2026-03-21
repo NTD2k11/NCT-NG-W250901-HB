@@ -1,4 +1,4 @@
-import { auth, db } from "../auth.js";
+import { auth, db } from "../Login/auth.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
 import { ref, onValue, remove } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
 
@@ -56,6 +56,7 @@ function addEvents() {
 onAuthStateChanged(auth, (user) => {
   if (!user) {
     showPosts([]);
+    window.location.href = "../Login/login.html";
     return;
   }
 

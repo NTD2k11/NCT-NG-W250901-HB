@@ -27,7 +27,20 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
 
-export { auth, db };
+function syncAuthLocalState(user) {
+  if (!user) {
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("username");
+    localStorage.removeItem("user_email");
+    return;
+  }
+
+  localStorage.setItem("user_id", user.uid);
+  localStorage.setItem("username", user.displayName || "");
+  localStorage.setItem("user_email", user.email || "");
+}
+
+export { auth, db, syncAuthLocalState };
 
 // ================= SIGNUP =================
 const signupForm = document.getElementById("signupForm");
@@ -58,8 +71,10 @@ if (signupForm) {
       const cred = await createUserWithEmailAndPassword(auth, email, password);
 
       await updateProfile(cred.user, { displayName: fullname });
+      syncAuthLocalState({ ...cred.user, displayName: fullname });
 
       await set(ref(db, "users/" + cred.user.uid), {
+        name: fullname,
         fullname,
         email,
         createdAt: new Date().toISOString(),
@@ -90,7 +105,8 @@ if (loginForm) {
     if (!email || !password) return alert("Nhap day du thong tin");
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const cred = await signInWithEmailAndPassword(auth, email, password);
+      syncAuthLocalState(cred.user);
       alert("Dang nhap thanh cong!");
       window.location.href = "../Home/Dashboard/dashboard.html";
     } catch (err) {
@@ -101,7 +117,9 @@ if (loginForm) {
 
 // ================= AUTO REDIRECT IF LOGGED IN =================
 onAuthStateChanged(auth, (user) => {
-  if (user && window.location.pathname.includes("login.html")) {
+  syncAuthLocalState(user);
+
+  if (user && (window.location.pathname.includes("login.html") || window.location.pathname.includes("signup.html"))) {
     window.location.href = "../Home/Dashboard/dashboard.html";
   }
 });

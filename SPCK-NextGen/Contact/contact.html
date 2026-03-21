@@ -32,7 +32,7 @@
         <header>
             <h1>Liên hệ chúng tôi</h1>
             <p>Chúng tôi rất muốn nghe từ bạn</p>
-            <p><a href="/SPCK-NextGen/Home/Dashboard/dashboard.html">📊 Dashboard</a> | <a href="/SPCK-NextGen/Profile/account.html">👤 Tài khoản</a> | <a href="/SPCK-NextGen/index.html">← Quay lại trang chủ</a></p>
+            <p><a href="../Home/Dashboard/dashboard.html">📊 Dashboard</a> | <a href="../Profile/account.html">👤 Tài khoản</a> | <a href="../index.html">← Quay lại trang chủ</a></p>
         </header>
 
         <section class="contact-wrapper">
@@ -112,14 +112,32 @@
         <footer>
             <p>&copy; 2025 BlogHub. Tất cả quyền được bảo lưu.</p>
             <div style="margin-top: 15px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <a href="/SPCK-NextGen/Home/home-modern.html">← Trang chủ blog</a>
-                <a href="/SPCK-NextGen/index.html">← Dự án</a>
-                <a href="/SPCK-NextGen/About/about.html">Về chúng tôi</a>
+                <a href="../Home/home-modern.html">← Trang chủ blog</a>
+                <a href="../index.html">← Dự án</a>
+                <a href="../About/about.html">Về chúng tôi</a>
             </div>
         </footer>
     </div>
 
-    <script src="/SPCK-NextGen/Contact/contact.js"></script>
+    <script src="contact.js"></script>
     <script src="../DarkLightMode/theme.js"></script>
+    <script type="module">
+        import { auth } from "../Login/auth.js";
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+
+        document.querySelector(".btn-logout")?.addEventListener("click", async () => {
+            await signOut(auth);
+            localStorage.removeItem("user_id");
+            localStorage.removeItem("username");
+            localStorage.removeItem("user_email");
+            window.location.href = "../Login/login.html";
+        });
+
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = "../Login/login.html";
+            }
+        });
+    </script>
 </body>
 </html>
